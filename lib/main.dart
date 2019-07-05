@@ -1,21 +1,28 @@
+import 'package:battery_manager/util/BatteryManagerBlocDelegate.dart';
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:battery_manager/util/const.dart';
-import 'module/battery/screens/BatteryListScreen.dart';
+import 'package:battery_manager/module/battery/batteryList/BatteryListScreen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'module/battery/batteryList/bloc/BatteryListBloc.dart';
+import 'module/battery/batteryList/bloc/BatteryListEvent.dart';
 
 void main() {
-  runApp(BatteryManager());
+  //TODO:: Zastępujemy domyślnego agenta przez własną klasę do monitorowania aktywności
+  BlocSupervisor.delegate = AppBlocDelegate();
+  runApp(BatteryManagerApp());
 }
 
-class BatteryManager extends StatelessWidget {
-  final routes = <String, WidgetBuilder>{
-    '/': (BuildContext context) => BatteryListScreen()
-  };
-
+class BatteryManagerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: BMConst.name,
-        theme: ThemeData(primaryColor: BMConst.primaryColor),
-        routes: routes);
+      title: BMConst.name,
+      theme: ThemeData(primaryColor: BMConst.primaryColor),
+      home: BlocProvider<BatteryListBloc>(
+        builder: (context) => BatteryListBloc()..dispatch(BatteryListLoadEvent()),
+        child: BatteryListScreen()
+      ),
+    );
   }
 }

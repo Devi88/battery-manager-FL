@@ -10,23 +10,25 @@ class BatteryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
+          padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
         ),
         Icon(Icons.battery_full, color: const Color(0xFF000000), size: 32.0),
-        new Padding(
-          padding: const EdgeInsets.fromLTRB(25.0, 0.0, 24.0, 25.0),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
         ),
         Text(battery.name),
-        new Padding(
-          padding: const EdgeInsets.fromLTRB(24.0, 6.0, 24.0, 24.0),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
         ),
-
-        Text(battery.getTypeName()),
+        Align(
+           alignment: Alignment.centerRight,
+          child: Text(battery.getTypeName()),
+        )
       ],
     );
   }
