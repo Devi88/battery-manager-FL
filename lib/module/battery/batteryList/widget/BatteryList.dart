@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'BatteryItem.dart';
 
 class BatteryList extends StatelessWidget {
-  final List<Battery> batteries = [BatteryLiPo('Pierwsza'), BatteryLiPo('Druga'), BatteryLiPo('Trzecia')];
+  final List<Battery> batteries;
+
+  const BatteryList(this.batteries);
 
   Widget _buildBatteryItem(BuildContext context, int index) {
     return BatteryItem(batteries[index]);
