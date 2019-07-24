@@ -9,7 +9,10 @@ class BatteryList extends StatelessWidget {
   const BatteryList(this.batteries);
 
   Widget _buildBatteryItem(BuildContext context, int index) {
-    return BatteryItem(batteries[index]);
+    return GestureDetector(
+      onTap: () => print(batteries[index].name),
+      child: BatteryItem(batteries[index])
+    );
   }
 
   @override

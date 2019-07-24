@@ -32,4 +32,3 @@ class BatteryListEmpty extends BatteryListState {
 }
 
 class BatteryListError extends BatteryListState {}
-

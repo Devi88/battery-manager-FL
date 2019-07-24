@@ -8,7 +8,6 @@ import 'module/battery/batteryList/bloc/BatteryListBloc.dart';
 import 'module/battery/batteryList/bloc/BatteryListEvent.dart';
 
 void main() {
-  //TODO:: Zastępujemy domyślnego agenta przez własną klasę do monitorowania aktywności
   BlocSupervisor.delegate = AppBlocDelegate();
   runApp(BatteryManagerApp());
 }
@@ -20,9 +19,9 @@ class BatteryManagerApp extends StatelessWidget {
       title: BMConst.name,
       theme: ThemeData(primaryColor: BMConst.primaryColor),
       home: BlocProvider<BatteryListBloc>(
-        builder: (context) => BatteryListBloc()..dispatch(BatteryListLoadEvent()),
-        child: BatteryListScreen()
-      ),
+          builder: (context) =>
+              BatteryListBloc()..dispatch(BatteryListLoadEvent()),
+          child: BatteryListScreen()),
     );
   }
 }

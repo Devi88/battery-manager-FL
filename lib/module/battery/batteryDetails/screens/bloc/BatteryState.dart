@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 @immutable
 abstract class BatteryState extends Equatable {
-  BatteryState([List props = const[]]): super(props);
+  BatteryState([List props = const []]) : super(props);
 }
 
 class InitialBatteryState extends BatteryState {}

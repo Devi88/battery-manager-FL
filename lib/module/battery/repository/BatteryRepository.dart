@@ -4,11 +4,11 @@ class BatteryRepository {
   final batteries = <Battery>[];
 
   mockGetBatteries() {
-    batteries.add(new Battery('Batteria Pierwsza'));
-    batteries.add(new Battery('Batteria Druga'));
-    batteries.add(new Battery('Batteria Trzecia'));
-    batteries.add(new Battery('Batteria Czwarta'));
-    batteries.add(new Battery('Batteria Piąta'));
+    batteries.add(new Battery('Bateria Pierwsza'));
+    batteries.add(new Battery('Bateria Druga'));
+    batteries.add(new Battery('Bateria Trzecia'));
+    batteries.add(new Battery('Bateria Czwarta'));
+    batteries.add(new Battery('Bateria Piąta'));
   }
 
   getBatteries() {

@@ -9,23 +9,23 @@ abstract class BatteryEvent extends Equatable {
 class FetchBatteries extends BatteryEvent {
   final String userId;
 
-  FetchBatteries(this.userId): super([userId]);
+  FetchBatteries(this.userId) : super([userId]);
 }
 
 class FetchBattery extends BatteryEvent {
   final String batteryId;
 
-  FetchBattery(this.batteryId): super([batteryId]);
+  FetchBattery(this.batteryId) : super([batteryId]);
 }
 
 class UpdateBattery extends BatteryEvent {
   final String batteryId;
 
-  UpdateBattery(this.batteryId): super([batteryId]);
+  UpdateBattery(this.batteryId) : super([batteryId]);
 }
 
 class DeleteBattery extends BatteryEvent {
   final String batteryId;
 
-  DeleteBattery(this.batteryId): super([batteryId]);
+  DeleteBattery(this.batteryId) : super([batteryId]);
 }

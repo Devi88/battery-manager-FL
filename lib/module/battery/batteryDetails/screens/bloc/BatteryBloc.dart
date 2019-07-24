@@ -6,7 +6,6 @@ import 'BatteryEvent.dart';
 import 'BatteryState.dart';
 
 class BatteryBloc extends Bloc<BatteryEvent, BatteryState> {
-
   final batteryRepo = new BatteryRepository();
 
   @override
@@ -14,10 +13,11 @@ class BatteryBloc extends Bloc<BatteryEvent, BatteryState> {
 
   @override
   Stream<BatteryState> mapEventToState(
-    BatteryEvent event, ) async* {
-      if(event is FetchBattery) {
-       yield* _mapFetchBatteryToState();
-      }
+    BatteryEvent event,
+  ) async* {
+    if (event is FetchBattery) {
+      yield* _mapFetchBatteryToState();
+    }
   }
 
   Stream<BatteryState> _mapFetchBatteryToState() async* {
@@ -29,4 +29,3 @@ class BatteryBloc extends Bloc<BatteryEvent, BatteryState> {
     }
   }
 }
-
