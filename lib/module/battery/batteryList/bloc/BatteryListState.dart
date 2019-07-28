@@ -7,28 +7,28 @@ class BatteryListState extends Equatable {
   BatteryListState([List props = const []]) : super(props);
 }
 
-class BatteryListLoading extends BatteryListState {
+class BatteryListLoadingState extends BatteryListState {
   @override
   String toString() => 'BatteryListLoading';
 }
 
-class BatteryListLoaded extends BatteryListState {
+class BatteryListLoadedState extends BatteryListState {
   final List<Battery> batteries;
 
-  BatteryListLoaded([this.batteries = const []]) : super([batteries]);
+  BatteryListLoadedState([this.batteries = const []]) : super([batteries]);
 
   @override
   String toString() => 'BatteryListLoaded { batteries: $batteries}';
 }
 
-class BatteryListNotLoaded extends BatteryListState {
+class BatteryListNotLoadedState extends BatteryListState {
   @override
   String toString() => 'BatteryListNotLoaded';
 }
 
-class BatteryListEmpty extends BatteryListState {
+class BatteryListEmptyState extends BatteryListState {
   @override
   String toString() => 'BatteryListEmpty';
 }
 
-class BatteryListError extends BatteryListState {}
+class BatteryListErrorState extends BatteryListState {}

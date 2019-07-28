@@ -10,3 +10,8 @@ class BatteryListLoadEvent extends BatteryListEvent {
   @override
   String toString() => 'BatteryListLoadEvent';
 }
+
+class BatteryListLoadingEvent extends BatteryListEvent {
+  @override
+  String toString() => 'BatteryListLoadingEvent';
+}

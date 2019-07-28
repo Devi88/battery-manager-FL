@@ -20,7 +20,7 @@ class BatteryManagerApp extends StatelessWidget {
       theme: ThemeData(primaryColor: BMConst.primaryColor),
       home: BlocProvider<BatteryListBloc>(
           builder: (context) =>
-              BatteryListBloc()..dispatch(BatteryListLoadEvent()),
+              BatteryListBloc()..dispatch(BatteryListLoadingEvent()),
           child: BatteryListScreen()),
     );
   }
